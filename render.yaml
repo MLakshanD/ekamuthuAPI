@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: your-dotnet-api
+    runtime: docker
+    repo: https://gitlab.com/lakshangroup/ekamuthuapi
+    region: oregon
+    plan: free
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: PORT
+        value: 8080

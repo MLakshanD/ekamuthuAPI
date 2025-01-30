@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "I5Mv4PUSOvhj4NQbeoEXNb6JXcbpHN7mJNkzWwlcq6w=",
+  "Source": "EkamuthAPI",
+  "BasePath": "_content/EkamuthAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
