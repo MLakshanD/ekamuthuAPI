@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
 COPY *.sln ./
-COPY EkamuthAPI/*.csproj ./
+COPY *.csproj ./EkamuthAPI/
 RUN dotnet restore EkamuthAPI/EkamuthAPI.csproj
 
 COPY . .
