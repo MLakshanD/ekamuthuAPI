@@ -1,0 +1,5 @@
+[build]
+builder = "Nixpacks"
+nixpacksVersion = "latest"
+[variables]
+DOTNET_VERSION = "8.0"
