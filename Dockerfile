@@ -1,17 +1,20 @@
-# STEP 1: Build
+# STEP 1: Build stage
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
-# Copy project files
-COPY EkamuthAPI/*.csproj ./EkamuthAPI/
+# Copy solution and project files
+COPY *.sln ./
+COPY EkamuthAPI/EkamuthAPI.csproj ./EkamuthAPI/
+
+# Restore dependencies
 RUN dotnet restore EkamuthAPI/EkamuthAPI.csproj
 
-# Copy everything and publish
-COPY . .
+# Copy all files and build
+COPY . .  
 WORKDIR /app/EkamuthAPI
-RUN dotnet publish EkamuthAPI.csproj -c Release -o /publish
+RUN dotnet publish -c Release -o /publish
 
-# STEP 2: Runtime
+# STEP 2: Runtime stage
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 COPY --from=build /publish .
