@@ -7,7 +7,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.WebHost.UseUrls("https://*:10000"); // Render uses dynamic ports
+//builder.WebHost.UseUrls("https://*:10000"); // Render uses dynamic ports
 
 // Add services to the container.
 builder.Services.AddCors(options =>
