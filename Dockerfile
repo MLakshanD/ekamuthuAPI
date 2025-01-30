@@ -2,16 +2,14 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
-# Copy solution and project files
-COPY *.sln ./
-COPY EkamuthAPI/EkamuthAPI.csproj ./EkamuthAPI/
+# Copy project files (inside EkamuthAPI)
+COPY EkamuthAPI.csproj ./
 
 # Restore dependencies
-RUN dotnet restore EkamuthAPI/EkamuthAPI.csproj
+RUN dotnet restore EkamuthAPI.csproj
 
 # Copy all files and build
-COPY . .  
-WORKDIR /app/EkamuthAPI
+COPY . .
 RUN dotnet publish -c Release -o /publish
 
 # STEP 2: Runtime stage
