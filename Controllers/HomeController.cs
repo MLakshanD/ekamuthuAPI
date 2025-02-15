@@ -32,7 +32,7 @@ namespace EkamuthAPI.Controllers
             }
             else
             {
-                return Unauthorized(new { Message = "Invalid username or password." });
+                return Ok(new { Message = "Invalid username or password." });
             }
         }
 
